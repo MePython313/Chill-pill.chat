@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Chat - Sign Up & Chat with Friends!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌟 Kids Chat 🌟</h1>
+            <p>Chat safely with your friends!</p>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-section" class="form-section">
+            <h2>Create Your Account</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-username">Username:</label>
+                    <input type="text" id="signup-username" required minlength="3" maxlength="20">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" required minlength="6">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <p class="switch-form">Already have an account? <a href="#" id="show-login">Log In</a></p>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-section" class="form-section" style="display: none;">
+            <h2>Welcome Back!</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">Username:</label>
+                    <input type="text" id="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Log In</button>
+            </form>
+            <p class="switch-form">Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+        </div>
+
+        <!-- Chat Section -->
+        <div id="chat-section" style="display: none;">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h2>Chat with Friends</h2>
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                </div>
+                
+                <div class="chat-layout">
+                    <div class="friends-panel">
+                        <h3>Your Friends</h3>
+                        <div id="friends-list"></div>
+                        <div class="add-friend-section">
+                            <h4>Add Friend</h4>
+                            <input type="text" id="search-username" placeholder="Search username...">
+                            <div id="search-results"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-panel">
+                        <div id="chat-header-info">
+                            <p>Select a friend to start chatting!</p>
+                        </div>
+                        <div id="messages-container"></div>
+                        <div id="message-input-section" style="display: none;">
+                            <form id="message-form">
+                                <input type="text" id="message-input" placeholder="Type your message..." required>
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Display -->
+        <div id="message-display"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
